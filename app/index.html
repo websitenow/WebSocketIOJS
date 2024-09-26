@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Puppeteer + Socket.IO</title>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        const socket = io();
+
+        // Enviar um evento para o servidor
+        socket.emit('clientEvent', { message: 'Olá do cliente!' }); 
+
+        socket.on('pageevt', () => {
+            alert("Loaded Page!")
+        });
+    </script>
+</head>
+<body>
+    <h1>Teste de Puppeteer com Socket.IO</h1>
+</body>
+</html>
